@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title" />
+
+    <LinearLayout
+        style="@style/base_padding"
+        android:orientation="vertical" >
+		<TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:text="No company available!"
+            android:textColor="@color/red_color"
+            android:visibility="gone"/>
+        <ListView
+            android:id="@+id/list_companies"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="#3a3e3e"
+            android:dividerHeight="1dp"
+            android:scrollingCache="false" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/connect_with"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/connect_text"
+            android:textColor="@color/red_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:onClick="onLogin"
+            android:text="@string/change_user_text"
+            android:textColor="@color/red_color" />
+    </LinearLayout>
+
+</LinearLayout>

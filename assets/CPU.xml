@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LGMSolution>
+	<Head>
+		<CustomerID>CPU</CustomerID>
+		<CompanyName>CPU Service</CompanyName>
+		<Logo>http://www.cpu.qc.ca/images/logo_cpu.jpg</Logo>
+		<MailSubject>Ticket#$Ticket / $Status / $CustomerID</MailSubject>
+		<MailAddress>jforget@lgmsolution.com</MailAddress>
+	</Head>
+	<Form>
+		<Element type="textfield" label="TICKET" name="Ticket" validate="interger"></Element>
+		<Element type="textfield" label="BON DE TRAVAIL LGM" name="WorkOrderLGM" validate="interger"></Element>
+		<Element type="textfield" label="PROBLÈME CONSTATÉ" name="Problem" validate="string"></Element>	
+		<Element type="select" label="FRÉQUENCE" name="CmdFrequence">
+			<Option value="0">CONSTANT</Option>
+			<Option value="1">INTERMITTENT</Option>
+		</Element>
+		<Element type="textfield" label="TRAITEMENT EFFECTUÉ" name="Resolution" validate="string"></Element>	
+		<Element type="textfield" label="PIECE" name="Parts" alt="Séparer par une virgule si plusieurs pièces." validate="string"></Element>	
+		<Element type="text" label="APPAREIL DÉFECTUEUX"></Element>	
+		<Element type="textfield" label="MODÈLE" name="Model" validate="string"></Element>	
+		<Element type="textfield" label="NO SÉRIE" name="SerialNo" validate="string"></Element>	
+		<Element type="textfield" label="IDENTIFIANT" name="Identifiant" validate="string"></Element>	
+		<Element type="textfield" label="PAGE COUNT" name="PageCount" validate="integer"></Element>	
+		<Element type="checkbox" label="Imprimante Samsung ?" name="SamsungPrinter">
+			<Radio label="Yes" value="1" checked="true" onChecked="ManifactureDate"></Radio>
+			<Radio label="No" value="0"></Radio>
+		</Element>
+		<Element type="select" label="Pret et appareil de remplacement" name="CmdLoanReplacement">
+			<Option value="0">N/A</Option>
+			<Option value="1" onChosen="LoanReplacementType">PRET</Option>
+			<Option value="2" onChosen="LoanReplacementType">APPAREIL DE REMPLACEMENT</Option>
+		</Element>
+		<Element type="datepicker" label="DATE" name="Date"></Element>
+		<Element type="timepicker" label="DÉPART" alt="*** Dispatch" name="Dispatch"></Element>
+		<Element type="timepicker" label="ARRIVE" alt="*** Debut" name="Start"></Element>
+		<Element type="timepicker" label="FIN" name="End"></Element>	
+		<Element type="timepicker" label="RETOUR" name="In"></Element>	
+		<Element type="textfield" label="CALL-IN" name="CallIn" validate="string"></Element>	
+		<Element type="textfield" label="CALL-OUT" name="CallOut" validate="string"></Element>	
+		<Element type="listview" label="Materiel a facturer?" name="CmdPartInvoice">
+			<ListViewField type="textfield" label="Quantite" name="InvoiceQty" validate="interger"></ListViewField>
+			<ListViewField type="textfield" label="Description" name="InvoiceDescription" validate="String"></ListViewField>
+			<ListViewField type="textfield" label="Prix" name="InvoicePrice" validate="Decimal"></ListViewField>	
+		</Element>
+		<Element type="camera" label="Photo bon de travail CPU (Fichier PDF)" name="CmdPicture"></Element>	
+		<Element type="select" label="Status" name="CmdStatus">
+			<Option value="0">Must Schedule</Option>
+			<Option value="1">On Hold</Option>
+			<Option value="2">Waiting parts/repair</Option>
+			<Option value="3">Waiting Client Response</Option>
+			<Option value="4">Completed</Option>
+			<Option value="5">To Dispatch</Option>
+		</Element>
+
+	</Form>	
+	<ConditionElement>
+		<GroupElement name="ManifactureDate">
+			<Element type="textfield" label="ANNEE DE FABRICATION" name="ManifactureYear" validate="integer"></Element>	
+			<Element type="textfield" label="MOIS DE FABRICATION" name="ManifactureMonth" validate="integer"></Element>	
+		</GroupElement>
+		<GroupElement name="LoanReplacementType">
+			<Element type="textfield" label="MARQUE" name="NewBrand" validate="string"></Element>	
+			<Element type="textfield" label="MODÈLE" name="NewModel" validate="string"></Element>	
+			<Element type="textfield" label="NO SÉRIE" name="NewSerialNo" validate="string"></Element>	
+			<Element type="textfield" label="IDENTIFIANT" name="NewIdentifiant" validate="string"></Element>
+		</GroupElement>
+	</ConditionElement>	
+</LGMSolution>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Increment Minutes By"
+        android:textColor="@color/text_color" />
+
+    <LinearLayout
+        android:id="@+id/group_btn_mins"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:weightSum="4" >
+
+        <Button
+            android:id="@+id/btn_tpd_30"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_button"
+            android:text="30"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/btn_tpd_15"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_button"
+            android:text="15"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/btn_tpd_5"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_button"
+            android:text="5"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/btn_tpd_1"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_button"
+            android:text="1"
+            android:textColor="#FFF" />
+    </LinearLayout>
+
+    <TimePicker
+        android:id="@+id/tpk_tpd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3" >
+
+        <Button
+            android:id="@+id/btn_tpd_done"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Done" />
+
+        <Button
+            android:id="@+id/btn_tpd_now"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Now" />
+
+        <Button
+            android:id="@+id/btn_tpd_cancel"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Cancel" />
+    </LinearLayout>
+
+</LinearLayout>
